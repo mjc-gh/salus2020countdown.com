@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=800">
+    <link rel="canonical" href="https://salus2020countdown.xyz" />
+
+    <title>Salus PA Class of 2020 Countdown!</title>
+    <meta property="og:title" content="Salus PA Class of 2020 Countdown!" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://salus2020countdown.xyz" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.css" integrity="sha256-+1Yu+5ObnnRUhRwyuxT1eNj5iVx/zBNS75tYlzc1z7U=" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/css?family=Overlock+SC&display=swap" rel="stylesheet">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/flipclock/0.7.8/flipclock.js" integrity="sha256-acPJCWQhgmeUTM0IJ84lOWiwGNtUhcjJOlOjYH00480=" crossorigin="anonymous"></script>
+
+    <style>
+      * { outline: none !important; }
+
+      html {
+        background-color: #AD172B;
+        background-image: linear-gradient(rgba(94, 0, 13, 0.9) 75%, rgba(173, 23, 43, 0.9));
+        font-family: 'Overlock SC', Arial, Helvetica, sans-serif;
+        font-display: block;
+      }
+
+      html, body {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        max-height: 100%;
+        overflow: hidden;
+      }
+
+      #clock-wrapper {
+        width: 460px;
+        margin: 50vh auto;
+        transform: translateY(-50%);
+      }
+
+      #clock {
+        margin: 0;
+      }
+
+      #clock-wrapper h1 {
+        color: #EFEFEF;
+        font-weight: normal;
+        margin-bottom: 1em;
+        text-align: center;
+        text-transform: uppercase;
+      }
+
+      .flip-clock-divider .flip-clock-label {
+        color: #EFEFEF;
+        font-family: 'Overlock SC', Arial, Helvetica, sans-serif;
+        font-weight: bold;
+        text-transform: uppercase;
+        text-shadow: 1px 1px 4px rgba(255, 255, 255, 0.1);
+      }
+
+      img {
+        width: 120px;
+        position: fixed;
+        bottom: 1em;
+        left: 50%;
+        transform: translateX(-50%);
+        /* -webkit-filter: invert(100%); */
+      }
+
+      #sal {
+        display: block;
+        transition: opacity 4s;
+        opacity: 0;
+      }
+
+      #sal.show {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="clock-wrapper">
+      <h1>Clinical Year Begins</h1>
+      <div id="clock"></div>
+    </div>
+
+    <img id="sal" src="https://media.giphy.com/media/TgP1GicxGen0oZtQ1c/giphy.gif" alt="Sal the Salmander" />
+    <!--<img src="https://s3-us-west-2.amazonaws.com/givecampus/uploads/school/SalusUniversity/SalusUniv-Logo_One-Line-Horizontal.png" alt="Salus University logo" />-->
+
+    <script type="text/javascript">
+      var currentDate = new Date;
+      var futureDate = new Date(2019, 7, 16, 12);
+
+      var diff = (futureDate.getTime() - currentDate.getTime()) / 1000;
+
+      var clock = new FlipClock(document.getElementById('clock'), diff, {
+        clockFace: 'DailyCounter',
+        autoStart: true,
+        countdown: true,
+        showSeconds: false
+      });
+
+      setTimeout(function(){ $('#sal').addClass('show') }, 1000 * 60 * 30);
+    </script>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93060122-2"></script>
+    <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-93060122-2');</script>
+  </body>
+</html>

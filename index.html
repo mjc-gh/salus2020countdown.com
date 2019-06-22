@@ -64,19 +64,29 @@
         position: fixed;
         bottom: 1em;
         left: 50%;
-        transform: translateX(-50%);
+        margin-left: -60px;
         /* -webkit-filter: invert(100%); */
       }
 
       #sal {
         display: block;
-        transition: opacity 4s;
+        transition: opacity 5s;
         opacity: 0;
       }
 
       #sal.show {
         opacity: 1;
       }
+
+      #sal.spin {
+        -webkit-animation:spin 5s linear infinite;
+        -moz-animation:spin 5s linear infinite;
+        animation:spin 5s linear infinite;
+      }
+
+      @-moz-keyframes spin { 100% { -moz-transform: rotate(360deg); } }
+      @-webkit-keyframes spin { 100% { -webkit-transform: rotate(360deg); } }
+      @keyframes spin { 100% { -webkit-transform: rotate(360deg); transform:rotate(360deg); } }
     </style>
   </head>
   <body>
@@ -101,7 +111,8 @@
         showSeconds: false
       });
 
-      setTimeout(function(){ $('#sal').addClass('show') }, 1000 * 60 * 30);
+      setTimeout(function(){ $('#sal').addClass('show') }, 2500);
+      setTimeout(function(){ $('#sal').addClass('spin') }, 10000);
     </script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-93060122-2"></script>
     <script>window.dataLayer = window.dataLayer || []; function gtag(){dataLayer.push(arguments);} gtag('js', new Date()); gtag('config', 'UA-93060122-2');</script>
